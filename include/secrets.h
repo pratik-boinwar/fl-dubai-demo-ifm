@@ -1,0 +1,244 @@
+/*
+ * secrets.h
+ *
+ *  Created on: 05-Jun-2020
+ *      Author: Umesh
+ *  Edited on: 13-Sept-2021
+ *      Author: Nivrutti
+ */
+
+#ifndef SECRETS_H_
+#define SECRETS_H_
+
+// Hareda Root CA
+static const char SERVER_CERT_CA[] =
+    "-----BEGIN CERTIFICATE-----\n"
+    "MIIC5zCCAc+gAwIBAgIUIEKhSZPYlRbUE3lsSCl4hUKoVWAwDQYJKoZIhvcNAQEL\n"
+    "BQAwHjEOMAwGA1UEAwwFUk1TQ0ExDDAKBgNVBAoMA1JNUzAeFw0yMDA4MTIxMTE5\n"
+    "MTJaFw0yMTA4MTIxMTE5MTJaMB4xDjAMBgNVBAMMBVJNU0NBMQwwCgYDVQQKDANS\n"
+    "TVMwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDru0XqRHOl3x9xYamt\n"
+    "F0DBsU/Ua1EuvHtkO12jPoptY/Pe4GqcHPLs/OIFHTVoCxSIAHPV2lHXTkRsBtsi\n"
+    "jZPUisxEIyuc/jhd3MwXtPs5HiYiLM2f6Sk2zzPeO2cRhSo56yXmEtTt2HHJ2uih\n"
+    "afQKTpE+Z6zjm3rWNCm2vVRFfiZXM5nH/7UZ2MwOVByE0Y++fT2FEPXB7B00YPn4\n"
+    "+8lgg1pwvcQ9xjeMgCP2KzBKMIyTuouAUu6v0i+Vcw2cWmSPVOKi1LYmJ0l+fw8e\n"
+    "fryZVrGTvSs3ESEcpXV+d92XTE802kYzKG8ljW45RI4zTagUUR6HSdT2jWRGaTtr\n"
+    "KnZdAgMBAAGjHTAbMAwGA1UdEwQFMAMBAf8wCwYDVR0PBAQDAgEGMA0GCSqGSIb3\n"
+    "DQEBCwUAA4IBAQAJHtDErvJ6ATR3lXyvfQxlTXp7Lp7xy3P5BUUnQCNQfbDVCn5u\n"
+    "vTGqLeOe81I6RwnDkSV6w4BwqNo1tey3f6A2Z0mmiAWUnl5kpdJ1YiZp4U66Kpfo\n"
+    "gkd78Jq+DgzaamPp+8hO8EDrQyLLwhbeJe30GgXSxi4cQaKRqByZy4ANE9D1lmXI\n"
+    "GJ6oc4lJAScyX3CWHpXND0ZJX+65DFC6J4yPPeNBh8PGlYMSS4F0iOhNd0Fg7zoo\n"
+    "CQF9lgB28cRVQSB078LeBWjp0y9SPyK7mBcFio4pOuEV16jRDOaoeDTMNyKjncWo\n"
+    "5APu5xGNkRzEkkJai3Ba2yUu907Csuuj6OEt\n"
+    "-----END CERTIFICATE-----\n";
+
+// Device Certificate
+static const char CLIENT_CERT_CRT[] =
+    "-----BEGIN CERTIFICATE-----\n"
+    "MIIDBzCCAe+gAwIBAgICCeQwDQYJKoZIhvcNAQELBQAwHjEOMAwGA1UEAwwFUk1T\n"
+    "Q0ExDDAKBgNVBAoMA1JNUzAeFw0yMTA3MjgxMjE1NDNaFw0yODA3MjYxMjE1NDNa\n"
+    "MD4xLzAtBgNVBAMMJjg2MjgxODA0OTU3NzgxMiRzdGFuZGFsb25lc29sYXJwdW1w\n"
+    "JDIwMQswCQYDVQQKDAIyMDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEB\n"
+    "AKZfDxJobWikjr3Fy4uwduXtCgXojXFJyS+cuaIyl8qkD3w2vZovjJIERO8Rx1GR\n"
+    "EkwsjNpmsD5ahPqK6GfIBK/iRIOqIqbSLSHpp0SwXb8OAyjBM7sxnr3cMbx0R9Ix\n"
+    "cvs1q3Ne7McFuz7RVbl9EqXVlON/TIqX18XD5vTKR8yumWzkS6g0sMAv0cvBdANV\n"
+    "p2kRsamy/iz6sAP96zuoT9Lc6jTuzY/N1CO9waFCC+zKad8DbfbThibtdzmNcD/c\n"
+    "fDWhg9vjmDK1sxt78ZWXvtXRbblsWf4Fk3rcqQ6tvZVjzToBwL08VHBpG5bRWcY/\n"
+    "geVCbmiyl7qS59fRCg69QhECAwEAAaMvMC0wCQYDVR0TBAIwADALBgNVHQ8EBAMC\n"
+    "BaAwEwYDVR0lBAwwCgYIKwYBBQUHAwIwDQYJKoZIhvcNAQELBQADggEBAKz5VAUQ\n"
+    "qx8umduLi6V0xbYBp8hBOoSzgeBAWIWFWHhcnSz3cG66VOME6Gp2gzaNhyhMUiT0\n"
+    "rS+PkQ3ZR/3kIaH6kFX/HpWOQgmSdY8TdKsjcAXXg8fufh6lEINQSERMe4IssG8y\n"
+    "ow5ilci2jcJg1UP0CIfar7b3Qc8kQH3hICbEaVjUanhP98idnc0f8osKqGzDPGZ2\n"
+    "xQ3OublyGBNearBiaRSaU6UMe3YNw29GI9l/WvVwf+rnpJ1E12q6auNXhCFZ1cUN\n"
+    "WXfsOD6B7b0iPscwNPO10DVbLzaoJHXWTrmioHQeOpzsStobGNbgLMwMKCzaFcPo\n"
+    "jv4oqMZXe+OQAGk=\n"
+    "-----END CERTIFICATE-----\n";
+
+// Device Private Key
+static const char CLIENT_PRIVATE_KEY[] =
+    "-----BEGIN RSA PRIVATE KEY-----\n"
+    "MIIEowIBAAKCAQEApl8PEmhtaKSOvcXLi7B25e0KBeiNcUnJL5y5ojKXyqQPfDa9\n"
+    "mi+MkgRE7xHHUZESTCyM2mawPlqE+oroZ8gEr+JEg6oiptItIemnRLBdvw4DKMEz\n"
+    "uzGevdwxvHRH0jFy+zWrc17sxwW7PtFVuX0SpdWU439MipfXxcPm9MpHzK6ZbORL\n"
+    "qDSwwC/Ry8F0A1WnaRGxqbL+LPqwA/3rO6hP0tzqNO7Nj83UI73BoUIL7Mpp3wNt\n"
+    "9tOGJu13OY1wP9x8NaGD2+OYMrWzG3vxlZe+1dFtuWxZ/gWTetypDq29lWPNOgHA\n"
+    "vTxUcGkbltFZxj+B5UJuaLKXupLn19EKDr1CEQIDAQABAoIBACzlvlWDZPM2ZWcF\n"
+    "N9bsukl2XJwXlAQcm3SD4PzKlngTKjKlOyme51qIWGoD7Dww4DU6WJCf4bQSDYzn\n"
+    "a6yGJ+2nLEIz6cIHOjLKsV8yETp795JKAUHlNCecgreO0csBmTv90dUCqvdSrqNX\n"
+    "LsEt5ZhnORTjx64nKA2wvmUVKacsj7PjDsRgBIwH5kZ0T9s5509TZIAxq61KM2r7\n"
+    "ptCigF7VmlczYRhwO4tTSopGFmzEmv7LlBRtl8q9sMmKclu0N8Q8GN0C4Q3aTDtD\n"
+    "57ZUM6jwBHyM7S302P+QpQMgg9guV+Dlq9D2bsUoN0MbifMJs1Yie+u+00xwMPpn\n"
+    "Ro3B4xkCgYEA1vfZzuUnBYooUDe+9FMkXYvPE1NiONbKjaAjbEuv35EFLV+0jzch\n"
+    "nWBYrXecRan+ljSF/JCX/iGOIGsi3kyf4pz5K0CDMMJ0/7VBYZK3VGR6etgKHTRE\n"
+    "Xnz0pvNiC7ZceMwBfvkNZAWR7RPA3giUmn/w9PZEk3aXv5a+JN3lhZ8CgYEAxiCV\n"
+    "m+QLXlITKxndEAlyeZWK0imk3vFqsFdNizycC9dWjFS5loAGVXTBi5XhZnRt+eNP\n"
+    "OhsVoiDpLJvwhUwLmKJqYN7VIJatlBUU2zCH+bJznfakIVw1qCWSe7KXpORLcm6s\n"
+    "YUh6jxhg1Iv/iFrAnE2j5IcWv3ae/ZphEup9Ok8CgYA6aKe+xpa+s5ZWjX8OBdU4\n"
+    "sbc3Kg3jIcFxj9RwJXSJC29br8hwrWstxrLxlzFX4GOzTlwljugtfdKPTmzv9+Pt\n"
+    "f/dX4DSFOCDwJcC5EVNM0+xPmonM+5mkDtGu1yyJwCgKDmxNosAXsEfBIf/ilHRE\n"
+    "MoU3Gf7yDmQXA49wlvY5QwKBgQC/Xt3jc8PfWRuWuCakxNtDwUQTd5H+neVVax5F\n"
+    "bUe00EySw4t3aTW0+U+xShYrZi6L/hmaoGqm7W8MXZtWxXs19TsXUmU+UwxaSnqY\n"
+    "tSnB77JpU8B5UJ2rSo9Q19JNvQ16/JeYZ++po/xzkL5DsJT25K93n1xDl4o+nw1A\n"
+    "viozVQKBgAXzWwChO+BQFa2GA187C5+/8CmFyF0hatUohXngfo8Wrqo6BcPBbUxT\n"
+    "rbu/mF3Y84PJMS0xMAPYosxd2W37LFxtvej/Q4iz3ktcs6DzvmI8tWm+frcGKfph\n"
+    "wVnId80sFxUiubZIzm1QaaUxomlzY2AIB1JZuuSaHzYa9496XWFW\n"
+    "-----END RSA PRIVATE KEY-----\n";
+
+// FL Root CA
+// static const char SERVER_CERT_CA[] =
+//     "-----BEGIN CERTIFICATE-----\n"
+//     "MIIDzTCCArWgAwIBAgIUEk/JBO6TFsStAp3lNHpO6Ij1UykwDQYJKoZIhvcNAQEL\n"
+//     "BQAwdjELMAkGA1UEBhMCUk8xDTALBgNVBAgMBEhvbWUxDTALBgNVBAcMBEhvbWUx\n"
+//     "FjAUBgNVBAoMDU9uZVRyYW5zaXN0b3IxFjAUBgNVBAsMDU9uZVRyYW5zaXN0b3Ix\n"
+//     "GTAXBgNVBAMMEG9uZXRyYW5zaXN0b3IuZXUwHhcNMjEwMjIwMTExMTM2WhcNMjIw\n"
+//     "MjIwMTExMTM2WjB2MQswCQYDVQQGEwJSTzENMAsGA1UECAwESG9tZTENMAsGA1UE\n"
+//     "BwwESG9tZTEWMBQGA1UECgwNT25lVHJhbnNpc3RvcjEWMBQGA1UECwwNT25lVHJh\n"
+//     "bnNpc3RvcjEZMBcGA1UEAwwQb25ldHJhbnNpc3Rvci5ldTCCASIwDQYJKoZIhvcN\n"
+//     "AQEBBQADggEPADCCAQoCggEBAKSrkOwgeQ8zVoGxvIr4qiU50/FatUT255tdOJlB\n"
+//     "KslwygWOX1AfyPaU62/hLK3QtbEGxSNByN2YbK4SClDild3HDJDPAyKeh+0/py+A\n"
+//     "onwzQeB5x+IBxaVBEEsWbGVS0foq0Kg5z6YPZh3uzH4ldrPtwl0bit84xIVrlDgh\n"
+//     "QRcV7yPiwihfelIA2pECe5im3y42QD9Rg6+G6QucmFhEDy/z0Ck73n6rbDf5nvwU\n"
+//     "cHH/5oFJujuQX70ykLcwJpybPQrl9hK7VZFP6e5SLK4P0HFWk5rrBtFdenxjoqIx\n"
+//     "4HzC93CykKP04pzOaxNDGIXPOu8qmPRFkdzeBpRwrO+msVUCAwEAAaNTMFEwHQYD\n"
+//     "VR0OBBYEFOWU5PkEt5VTBmLQNfbcSwWnKDOKMB8GA1UdIwQYMBaAFOWU5PkEt5VT\n"
+//     "BmLQNfbcSwWnKDOKMA8GA1UdEwEB/wQFMAMBAf8wDQYJKoZIhvcNAQELBQADggEB\n"
+//     "AKHxBLlcMbn+qLpEfZc1nYddCcNIt//+fHxqH1hRB2tlmy+/EMGMTaD1ysHejyfr\n"
+//     "cXry5GoEaKVsMFZuS9gSO6ecu+dhyx88eEvk56eRg55W6lkvPThNEpKx7lZ3pgXm\n"
+//     "edxuqx2t4IebEqJVHY38R4M6t11ZzcAxjjDzWEGg0vUqjWcNL8+4EmnanOkrbnrd\n"
+//     "t2EnBiXyL3o+mGeoPZGAA+JJjLgtatCOgXKx5wv46Z+jyMwLDa5HJ7bRYuLiOGzs\n"
+//     "KZRWQvwuBKGoAlf0wrozfmgAT29G7ngF8vp1IZnVnaSzRooNAF8DqZIFSeJmdxsT\n"
+//     "ic8dLDycCwdL4vXGWFmUwZM=\n"
+//     "-----END CERTIFICATE-----\n";
+
+// // Device Certificate
+// static const char CLIENT_CERT_CRT[] =
+//     "-----BEGIN CERTIFICATE-----\n"
+//     "MIIDYzCCAksCFC4FrJQSfD994/biTCSN9YKpqePvMA0GCSqGSIb3DQEBCwUAMHYx\n"
+//     "CzAJBgNVBAYTAlJPMQ0wCwYDVQQIDARIb21lMQ0wCwYDVQQHDARIb21lMRYwFAYD\n"
+//     "VQQKDA1PbmVUcmFuc2lzdG9yMRYwFAYDVQQLDA1PbmVUcmFuc2lzdG9yMRkwFwYD\n"
+//     "VQQDDBBvbmV0cmFuc2lzdG9yLmV1MB4XDTIxMDIyMDExMTMzMVoXDTIyMDIyMDEx\n"
+//     "MTMzMVowZjELMAkGA1UEBhMCUk8xCjAIBgNVBAgMAUgxDTALBgNVBAcMBEhvbWUx\n"
+//     "FDASBgNVBAoMC01RVFQgQ2xpZW50MRQwEgYDVQQLDAtNUVRUIENsaWVudDEQMA4G\n"
+//     "A1UEAwwHVGhpbmcwMTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMU0\n"
+//     "YB80L00EUjfnyOjSCNTnUwok1VJVg7zvWW+C02LFh07ziSvfInpntmtjvPLi4yOr\n"
+//     "+Ez3qyat7jFbDyIzNfVIRsGSxwOl96wMjuYFAlIQypCZUjoYo5uIAXt17qcaRA9Z\n"
+//     "vZB1IhjpOiaQzDNsTp48z0Kwj0RgBO2byztNgB17CogWozUScHy9uVrPPg1jBwZG\n"
+//     "XP/SkYkScu3mmLSYiTs85MmRaZw435J0KOxB4ywsAQHsunATqCuK8oowl9qgRot8\n"
+//     "S+Lt3FQdGiBdgnqn6u5ImCJXBbRRy+8KHXaFJFFVhebONgWAxctzggS3Oq09DFmG\n"
+//     "mjQt2WqQT5GmHvrnjSsCAwEAATANBgkqhkiG9w0BAQsFAAOCAQEALKpu2XZrzNaB\n"
+//     "TCzrbHOxEyXKz6f8iB3RqqJ8Ho8sS3I11cPLAQolCGb4Ync2Eda3DWQjjEwKdV9d\n"
+//     "YjS1wCyAtvQe745x011BLFRtO4mGyMX61mu31/rof3/eiNIcGy+SLDAZxiOtEd0w\n"
+//     "wxKEXH5OS9PCpaX8Xv4/xtETikEgq9TLUNVg+zXXzZyTgiHXcBinDfN+90cLzfer\n"
+//     "fiIvfjtd17DLFzEHd/MZeW6N0dP+Piv39tdcnoLpdK2D2gNxNU4TQuk6N/hXsZlf\n"
+//     "3hxsCCyoj6kt9FxPL7zvFXwzhdAyJSUImRH+wXMv5CTz3XJQosQpXvG1kqV0Y70l\n"
+//     "pAxJHP1I7A==\n"
+//     "-----END CERTIFICATE-----\n";
+
+// // Device Private Key
+// static const char CLIENT_PRIVATE_KEY[] =
+//     "-----BEGIN RSA PRIVATE KEY-----\n"
+//     "MIIEpAIBAAKCAQEAxTRgHzQvTQRSN+fI6NII1OdTCiTVUlWDvO9Zb4LTYsWHTvOJ\n"
+//     "K98ieme2a2O88uLjI6v4TPerJq3uMVsPIjM19UhGwZLHA6X3rAyO5gUCUhDKkJlS\n"
+//     "Ohijm4gBe3XupxpED1m9kHUiGOk6JpDMM2xOnjzPQrCPRGAE7ZvLO02AHXsKiBaj\n"
+//     "NRJwfL25Ws8+DWMHBkZc/9KRiRJy7eaYtJiJOzzkyZFpnDjfknQo7EHjLCwBAey6\n"
+//     "cBOoK4ryijCX2qBGi3xL4u3cVB0aIF2Ceqfq7kiYIlcFtFHL7woddoUkUVWF5s42\n"
+//     "BYDFy3OCBLc6rT0MWYaaNC3ZapBPkaYe+ueNKwIDAQABAoIBAQC+Z3SLjEpDVXHA\n"
+//     "8rWkPe8zCWq+95NUXKbGzF6Q8UMCMfAUBcYiqt3SS8Lw6yrrZK+kqI0kW1lQDk1W\n"
+//     "MDJrdgCaJD/U9M/csOlyn+l1I876x6WdebvPxixppiawOszDYPPn0mDaUo4qeT2h\n"
+//     "MNtIp0E9PT9sh6a8gO0hMfRG/Ow/CPQFLBt4VUNR+85JIw698PBLW1SQLDoYCfpa\n"
+//     "2c+Yda84I/OjxLh4aDUEfee0qJLLBQguhI56bLYstr1h6/W20/61SjB1qHDS2uNr\n"
+//     "SbUjGKAK+0UEjTOg6NPIrXpxWE1sSzRPrYpFG2K5O5H//NfEQXEax35RFwcjjkFL\n"
+//     "rjLwJ+DxAoGBAO8yIPZvACRLaAF5zK9lI5QQBk2CpA7+go0LbFlwCduaUHrlkWhR\n"
+//     "ogo6BcLX4O7xbdV6O6A12AHVysQWi+/ca4RMhYPIdJzCKhc2K+fPdhKepAp9o3ZH\n"
+//     "23MBrVhq3LneGL4ck1K9TUuQWsE/w6Yo/kT/I93u8BaFvn+3nGHqmonZAoGBANMP\n"
+//     "C8pIAzE/UPewIehsXViK0nd9Z7DZ8lUZBFl3eKzJreFM+wQGlx5wvPcsJWdKejBz\n"
+//     "kc0E80glLJ45SFOe5gkJWcoEhJtRQGR32XqbeVw9Mnj4dW8Gdc1s3JbVCbEQxDle\n"
+//     "mUY4nUgJj1XvrLygEyT0Ha/gSZPv4QIYdx2c6wijAoGAC+mzOpLMrwISbABk8VdY\n"
+//     "LkeeCL447YY/ekbXXpz14LoOyBAm7csjBt9c6hdWXJApqDguQAxudajwMFPvJEMW\n"
+//     "F8C35ZhWNnh1IDLSfPkYKFU+VkdrnLh3dYLf30dzNs6Y7N7/d192Og02d+l1FRF1\n"
+//     "mHocjzEXRAflNPcwErBcggECgYEAxVo/WxGFMqqS6lhfDHcvvdhpPuQbbkoNiDcR\n"
+//     "Uxsc0uzu00ppOXV0Hzmp6LH186S3ptCaGAw19FMWaokDsXVWgkKlG/qniJgsTwWm\n"
+//     "bTgt/esXY/hnzr5KryDJD5z7J/+WjFKBniDYKQEPb3rimapQ3HALxmZCRru6OXxo\n"
+//     "/V66g2MCgYBgHMoo7vO8Onr4bqqN9rqHyX3pX+G2hbrXj0igRENrrKC1Afj8WcS7\n"
+//     "+7m0pyV4+2jpxuAJTPPsrICK8U3CaKfTtznmphf78XeeJO062OpCV6v91K5hT7F0\n"
+//     "hPlV2ScPJFf+sWc2e1WjYGfGxazDOzfqeIl08H5ylNotZCuBbf5tfA==\n"
+//     "-----END RSA PRIVATE KEY-----\n";
+
+#if AWS
+// Amazon Root CA 1
+static const char AWS_CERT_CA[] =
+    "-----BEGIN CERTIFICATE-----\n"
+    "MIIDQTCCAimgAwIBAgITBmyfz5m/jAo54vB4ikPmljZbyjANBgkqhkiG9w0BAQsF\n"
+    "ADA5MQswCQYDVQQGEwJVUzEPMA0GA1UEChMGQW1hem9uMRkwFwYDVQQDExBBbWF6\n"
+    "b24gUm9vdCBDQSAxMB4XDTE1MDUyNjAwMDAwMFoXDTM4MDExNzAwMDAwMFowOTEL\n"
+    "MAkGA1UEBhMCVVMxDzANBgNVBAoTBkFtYXpvbjEZMBcGA1UEAxMQQW1hem9uIFJv\n"
+    "b3QgQ0EgMTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALJ4gHHKeNXj\n"
+    "ca9HgFB0fW7Y14h29Jlo91ghYPl0hAEvrAIthtOgQ3pOsqTQNroBvo3bSMgHFzZM\n"
+    "9O6II8c+6zf1tRn4SWiw3te5djgdYZ6k/oI2peVKVuRF4fn9tBb6dNqcmzU5L/qw\n"
+    "IFAGbHrQgLKm+a/sRxmPUDgH3KKHOVj4utWp+UhnMJbulHheb4mjUcAwhmahRWa6\n"
+    "VOujw5H5SNz/0egwLX0tdHA114gk957EWW67c4cX8jJGKLhD+rcdqsq08p8kDi1L\n"
+    "93FcXmn/6pUCyziKrlA4b9v7LWIbxcceVOF34GfID5yHI9Y/QCB/IIDEgEw+OyQm\n"
+    "jgSubJrIqg0CAwEAAaNCMEAwDwYDVR0TAQH/BAUwAwEB/zAOBgNVHQ8BAf8EBAMC\n"
+    "AYYwHQYDVR0OBBYEFIQYzIU07LwMlJQuCFmcx7IQTgoIMA0GCSqGSIb3DQEBCwUA\n"
+    "A4IBAQCY8jdaQZChGsV2USggNiMOruYou6r4lK5IpDB/G/wkjUu0yKGX9rbxenDI\n"
+    "U5PMCCjjmCXPI6T53iHTfIUJrU6adTrCC2qJeHZERxhlbI1Bjjt/msv0tadQ1wUs\n"
+    "N+gDS63pYaACbvXy8MWy7Vu33PqUXHeeE6V/Uq2V8viTO96LXFvKWlJbYK8U90vv\n"
+    "o/ufQJVtMVT8QtPHRh8jrdkPSHCa2XV4cdFyQzR1bldZwgJcJmApzyMZFo6IQ6XU\n"
+    "5MsI+yMRQ+hDKXJioaldXgjUkK642M4UwtBV8ob2xJNDd2ZhwLnoQdeXeGADbkpy\n"
+    "rqXRfboQnoZsG4q5WTP468SQvvG5\n"
+    "-----END CERTIFICATE-----\n";
+
+// Device Certificate
+static const char AWS_CERT_CRT[] =
+    "-----BEGIN CERTIFICATE-----\n"
+    "MIIDWTCCAkGgAwIBAgIUJFqLyaayxxR06dAsifzvxvBeovwwDQYJKoZIhvcNAQEL\n"
+    "BQAwTTFLMEkGA1UECwxCQW1hem9uIFdlYiBTZXJ2aWNlcyBPPUFtYXpvbi5jb20g\n"
+    "SW5jLiBMPVNlYXR0bGUgU1Q9V2FzaGluZ3RvbiBDPVVTMB4XDTIwMDYwMzA4NTgx\n"
+    "MloXDTQ5MTIzMTIzNTk1OVowHjEcMBoGA1UEAwwTQVdTIElvVCBDZXJ0aWZpY2F0\n"
+    "ZTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAOBSTwGwehz08dQXJLS/\n"
+    "FZcMEmokGP3rX7Jpzy4oadBhZkhStNtKKj5d9yl3K2A91SDNtRhWK8NH2GMoCG+R\n"
+    "CvOvE4hQSBHEFqME9AIK8s3RUnB3vDaA2dx5/nw8ROFgs7r0rz0qhZsDxx+jVinH\n"
+    "+5CNYDt8z/k9lZALJunwXsd2r3o257keI1QdQ+vvjgcKuC4y+Rw4zFu3PnCaie+g\n"
+    "9zMBEq0ppjdaQrBj5WzzEpw85YNphkqeefKV3Y+MuDDjIJLme1/zXUWxP65+HUcw\n"
+    "z+74KioHG6khCDoXSvz/ZAwvX9hnOQhOgc843wwiDlScZuEf22lW7UW47RGugk8x\n"
+    "iiECAwEAAaNgMF4wHwYDVR0jBBgwFoAU83IqFbOi3j7mDCx+YokpO7k0pGkwHQYD\n"
+    "VR0OBBYEFMUbBqj9t97RGQPVN9Y1r4zLFg13MAwGA1UdEwEB/wQCMAAwDgYDVR0P\n"
+    "AQH/BAQDAgeAMA0GCSqGSIb3DQEBCwUAA4IBAQBHFEp0NLFY+0w7yrMC7kmwLsPC\n"
+    "5b6za/FMK6t9uWgqV+bxMS3R0Y7NMDHb32JFtPutF1cCTsqnx15GWqKyJkZoTpcH\n"
+    "wGAI5YsPmbQMZvMrSzAi7pOergtBWf54JyqGvcGrpuoNRjb/sEoqi1G2tyhgGB42\n"
+    "SHzFATGdlwn5jOXJ9QLPXY9DyYIrdk+PGsV/wxNmD7BgUB4/LmYsW99WM4TT6HwE\n"
+    "N98BqKZhmOarKdvCmhV+kGCGvJczvtd25oiwILX3gZwYqMoSG30pbUHT8kjqkgHJ\n"
+    "dVpIcV2Aj+w8/aDDyrzbzTi/WGYmnlrFziWfK8ErXxIBNBFwK1GVsWl2pafH\n"
+    "-----END CERTIFICATE-----\n";
+
+// Device Private Key
+static const char AWS_CERT_PRIVATE[] =
+    "-----BEGIN RSA PRIVATE KEY-----\n"
+    "MIIEpQIBAAKCAQEA4FJPAbB6HPTx1BcktL8VlwwSaiQY/etfsmnPLihp0GFmSFK0\n"
+    "20oqPl33KXcrYD3VIM21GFYrw0fYYygIb5EK868TiFBIEcQWowT0AgryzdFScHe8\n"
+    "NoDZ3Hn+fDxE4WCzuvSvPSqFmwPHH6NWKcf7kI1gO3zP+T2VkAsm6fBex3avejbn\n"
+    "uR4jVB1D6++OBwq4LjL5HDjMW7c+cJqJ76D3MwESrSmmN1pCsGPlbPMSnDzlg2mG\n"
+    "Sp558pXdj4y4MOMgkuZ7X/NdRbE/rn4dRzDP7vgqKgcbqSEIOhdK/P9kDC9f2Gc5\n"
+    "CE6BzzjfDCIOVJxm4R/baVbtRbjtEa6CTzGKIQIDAQABAoIBAQCMBVSjrVDL+mlp\n"
+    "Bfk3iX8khbiI4HdpKB7X8wwLt9Y06Fc8FcQmjajIvUamb2h37qC2lTDRPBidEJ+V\n"
+    "ZUu+uD6p1ULP96zEyi2HHHRjQgpFRr+6zEKDkvJqmQus6MHmHMKTlGA+Qeib1kPZ\n"
+    "D8+czOPOWzEScNowraxJ+WwU4qGGxvcrWAuEbr+1JGi2vq+Qh7EMiYjOKGgsoAu1\n"
+    "u5E4vnFTa4ZbmlZ1CwBg323uN8Ijr0DxMXDxFrglr8Iz/MDmrsTB9qrPraMf0IcY\n"
+    "iORbZoV834rO5gKJBQlgl7VxJyP5nc9JSWzhVwR2LwwwZyUSVswpOIxIMRl1sTwp\n"
+    "7iysJRkxAoGBAP0sz3RtzUqJoFS2XmxZbuZPaXxw+RuxG1ssme/Y8kUU1aRdjfXT\n"
+    "W4/iIKMeQ37Wy0wnvsrWIlyjWS0pH0RoNP2Sj5g55giREwtB09XRAiaCw1zmQLxN\n"
+    "mhyRF9N9W3J8/uDM5yYOyDvXUUaNKl0fleQUJ+8M0cYZoeP6bato+/IHAoGBAOLT\n"
+    "FCbYGvpCVuZHN9Qo3qt4V0IyVnRVWW0hKaKylRmwDK5FypXvlohHCtHhHHaWc0wb\n"
+    "cgwEOCumcsiOr2fMFiwbuk8FW5Z0drYh65tEJpiUgD/lH+b182StuN1MJXnaRgsA\n"
+    "1RGH1K/FKxdvgIge5e3Pt66tsIXTL24MmaLLKfiXAoGAIHA2YHeVHyDFHzWCoaVP\n"
+    "1UiFfoFHGao2lBcB3j5QxFMoEHhAMSgUijnx7pR5F25T+/z3sCuBmZcAXQ3wyKYF\n"
+    "bBv0NA/vDlfwNbgIeVPfT6nfeC60Sqwyu8hHYjykk+W6DnmSgEjSlQBAlKaPsADV\n"
+    "BrUibLmawyQTnw8+MAEyjs8CgYEAtAyFdIgacgjy3fwuTtTaXBY8faljgxi00bF/\n"
+    "UUycmjVq+3Me6oGyZh6ucgdVBrVKdGFc2DkJNWz8tEK+7Y/NEdo4u70vBHESQmUO\n"
+    "lsM0N+25F/8Soc0eFQ7pLZDiNqWS7+0LNM0zgQrrt8CksGiGb41w6tGoy7Hldl++\n"
+    "HMFUYaUCgYEAmqhl0xrKtEivF9KVQi7CGyHJMaizxuGiMmRsGYXsi/klLW3g5zjX\n"
+    "9Erb2HzzTCkZw7eFBdWIP9XXBJI5f3xNWw6+vVX2q8LJvoW058I3CtIF7z39JXiw\n"
+    "ua52zKjnJz9dXBhR316ENmzhjtcgriR5xTw0iM2aLo1GULr47K0jkv0=\n"
+    "-----END RSA PRIVATE KEY-----\n";
+#endif // AWS
+
+#endif /* SECRETS_H_ */

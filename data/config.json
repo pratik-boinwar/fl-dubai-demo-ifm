@@ -1,0 +1,132 @@
+{
+  "DEVICE_CONFIG": {
+    "MODADDR": 1,
+    "URATE": 5,
+    "HEARTBEAT_INTERVAL": 300,
+    "CALIB_FACTOR": 0.808823,
+    "DEF_LAT": "22.49140",
+    "DEF_LONG": "72.89260"
+  },
+  "PUMP_UART_SET": {
+    "BAUDRATE232": 57600,
+    "BAUDRATE485": 9600,
+    "DATABITS": 8,
+    "STOPBITS": 1,
+    "PARITY": 0
+  },
+  "INT_SET": {
+    "UID": "admin",
+    "UPASS": "admin123",
+    "MID": "fountlab",
+    "MPASS": "fountlab123"
+  },
+  "MQTT_SET_SERV1": {
+    "HOST": "rms1.kusumiiot.co",
+    "PORT_NO": 8883,
+    "OTPSUBTOPIC": "iiot-1/standalonesolarpump/865006043214957/otp/sub",
+    "INFOSUBTOPIC": "iiot-1/standalonesolarpump/865006043214957/info/sub",
+    "HBPUBTOPIC": "iiot-1/standalonesolarpump/865006043214957/heartbeat/pub",
+    "DATAPUBTOPIC": "iiot-1/standalonesolarpump/865006043214957/data/pub",
+    "ONDMD_SUBTOPIC": "iiot-1/standalonesolarpump/865006043214957/ondemand/sub",
+    "ONDMD_PUBTOPIC": "iiot-1/standalonesolarpump/865006043214957/ondemand/pub",
+    "CONFIG_SUBTOPIC": "iiot-1/standalonesolarpump/865006043214957/config/sub",
+    "CONFIG_PUBTOPIC": "iiot-1/standalonesolarpump/865006043214957/config/pub",
+    "MQTT_UNAME": "865006043214957$standalonesolarpump$20",
+    "MQTT_PASS": "b3bd01f1",
+    "CLIENTID": "d:865006043214957$standalonesolarpump$20",
+    "SSL": 1,
+    "CERT_EN": 0
+  },
+  "FL_SERVER_CRED": {
+    "HOST": "139.59.55.251",
+    "MQTT_PORT_NO": 1883,
+    "SUBTOPIC": "rotomag/commands",
+    "PUBTOPIC": "rotomag/commandsResp",
+    "MQTT_UNAME": "rotomag",
+    "MQTT_PASS": "mqtt_rotomag",
+    "MQTT_CLIENTID": "hnHkJGW3tGDi222d99FP",
+    "FL_SERV_HTTP_URL": "/credentials",
+    "FL_SERV_HTTP_TOKEN": "26pFy0SXWu7HkZWZlLZY",
+    "FL_SERV_HTTP_PORT": 3000
+  },
+  "HTTP_TCP_SET": {
+    "DHEAD": 0,
+    "PROTOCOL": 0,
+    "DATA_SERV_IP": "pumpeye.rotosol.solar",
+    "DATA_SERV_URL": "/api/PumpData",
+    "DATA_SERV_PORT": 80,
+    "BACKUP_SERV_IP": "pumpeye.rotosol.solar",
+    "BACKUP_SERV_URL": "/api/PumpData",
+    "BACKUP_SERV_PORT": 80,
+    "SSL": 1
+  },
+  "FTP_SET": {
+    "FTPUNAME": "862818049577812",
+    "FTPPASS": "436e558",
+    "FTPURL": "rms1.kusumiiot.co",
+    "FTPPORT": 22,
+    "local_ipport": "rms1.kusumiiot.co:8883",
+    "local_ssid": "862818049577812",
+    "local_ssid_password": "ec13e30",
+    "CIPHER": "8f59e932239841bba21c1f90ef0dc848",
+    "SERPASS": "5c13a5170ff24e49aa0399e783a62206"
+  },
+  "RMU_SET": {
+    "CONTROLLER_TYPE": 66,
+    "PCNTRMODE1": 2,
+    "PCID": "SD1851218",
+    "RID": "XDC1785",
+    "IMEI": "862818049577812",
+    "SPCLPREFFREQ1": 0
+  },
+  "RMU_CONSTATNTS_SET": {
+    "PDCVOC1": 632,
+    "PMAXDCV1": 532,
+    "PMAXDCI1": 10,
+    "PDCISC": 11,
+    "PHEAD": 100,
+    "STINTERVAL": 15,
+    "APFREQHSP1": 55,
+    "APMAXFREQ1": 55,
+    "APFREQLSP1": 10,
+    "BPFREQHSP1": 105,
+    "BPMAXFREQ1": 120,
+    "BPFREQLSP1": 20,
+    "PPFREQHSP1": 120,
+    "PPMAXFREQ1": 120,
+    "PPFREQLSP1": 10,
+    "DPFREQHSP1": 120,
+    "DPMAXFREQ1": 120,
+    "DPFREQLSP1": 10,
+    "SPFREQHSP1": 0,
+    "SPMAXFREQ1": 0,
+    "SPFREQLSP1": 0,
+    "FCODE": "F551824_6",
+    "POWER0": 1171,
+    "POWER1": 1584,
+    "POWER2": 2142,
+    "POWER3": 2897,
+    "POWER4": 3919,
+    "POWER5": 5301,
+    "FLOW1": 1704,
+    "FLOW2": 3408,
+    "FLOW3": 5112,
+    "FLOW4": 6816,
+    "FLOW5": 8520,
+    "PMAXFLW1": 118.22,
+    "PMAXKW1": 4.83,
+    "PREFFREQ1": 100
+  },
+  "APN_SET": {
+    "APNMODE": 1,
+    "APN1": "airtelgprs.com",
+    "APN2": "www"
+  },
+  "RMU_LOG_SET": {
+    "LOGSENDMQTT": 1,
+    "LOGSENDHTTP": 1,
+    "LOGSAVEMQTT": 1,
+    "LOGSAVEHTTP": 1,
+    "LOGCNT": 0
+  }
+}

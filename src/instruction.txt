@@ -1,0 +1,38 @@
+
+
+/// ******************** Changes in home button*********************
+Add
+// lv_textarea_set_text(ui_usernameTxt, "");
+// lv_textarea_set_text(ui_passwordTxt, "");
+
+///******************** Changes in Login button*********************
+Replace
+// const char *AdminUsername = "Fl";
+// const char *AdminPassword = "Fl01";
+
+// if (strcmp(lv_textarea_get_text(ui_TextUsername), AdminUsername) != 0 && strcmp(lv_textarea_get_text(ui_TextLoginPassword), AdminPassword) != 0)
+// {
+//     _ui_flag_modify(ui_PopUpLabel, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_REMOVE);
+//     lv_textarea_set_text(ui_TextUsername, "");
+//     lv_textarea_set_text(ui_TextLoginPassword, "");
+// }
+
+// if (strcmp(lv_textarea_get_text(ui_TextUsername), AdminUsername) == 0 && strcmp(lv_textarea_get_text(ui_TextLoginPassword), AdminPassword) == 0)
+// {
+//     lv_textarea_set_text(ui_TextUsername, "");                               //////////
+//     lv_textarea_set_text(ui_TextLoginPassword, "");                               //////////
+//     _ui_flag_modify(ui_PopUpLabel, LV_OBJ_FLAG_HIDDEN, _UI_MODIFY_FLAG_ADD); //////////
+//     _ui_screen_change(&ui_DateTimeScreen, LV_SCR_LOAD_ANIM_FADE_ON, 500, 0, &ui_DateTimeScreen_screen_init);
+// }
+
+
+///******************** Changes in APN mode *********************
+Add
+// lv_textarea_set_text(ui_TextAPN, "");
+
+
+///******************** In lv_config file *********************
+
+increase heap size 48U to 100U
+
+
