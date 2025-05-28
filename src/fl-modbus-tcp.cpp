@@ -135,7 +135,7 @@ void ModbusTCPInit(void)
 void ModbusTCPLoop(void)
 {
   static uint32_t lastMillis = 0;
-  if ((millis() - lastMillis > 10000 && IsEthernetConnected()))
+  if (millis() - lastMillis > 10000)
   {
     lastMillis = millis();
     debugPrintln("Reading modbus TCP registers...");

@@ -144,7 +144,7 @@ void setup()
   ModbusTCPInit();
 #endif
 #ifdef ETHERNET_EANBLE
-  EthernetInit();
+  //EthernetInit();
 #endif
 
   success_tone();
@@ -221,23 +221,15 @@ else
   if (true == gSysParam.ap4gOrWifiEn)
   {
     isWifiNetClientSelected = true;
-    if (FlWifi.isConnected() || (true == IsEthernetConnected()))
+    if (FlWifi.isConnected())
     {
       WiFiEthNetclientLoop();
     }
   }
   else
   {
-
-    if (true == IsEthernetConnected())
-    {
-      isWifiNetClientSelected = true;
-      WiFiEthNetclientLoop();
-    }
-    else
-    {
       isWifiNetClientSelected = false;
-    }
+    
 #ifdef APP_MQTT_PUB_FUNCTIONALITY
     // App mqtt publish loop to send command resp stored in a queue
     AppMqttPubLoop();
