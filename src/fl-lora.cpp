@@ -52,10 +52,10 @@ const unsigned TX_INTERVAL = 10;
 // Pin mapping
 // Adapted for Feather M0 per p.10 of [feather]
 const lmic_pinmap lmic_pins = {
-    .nss = 33, // chip select on feather (rf95module) CS
+    .nss = 05, // chip select on feather (rf95module) CS
     .rxtx = LMIC_UNUSED_PIN,
-    .rst = 32,                        // reset pin
-    .dio = {35, 39, LMIC_UNUSED_PIN}, // assumes external jumpers [feather_lora_jumper]
+    .rst = 21,                        // reset pin
+    .dio = {36, 22, LMIC_UNUSED_PIN}, // assumes external jumpers [feather_lora_jumper]
                                       // DIO1 is on JP1-1: is io1 - we connect to GPO6
                                       // DIO1 is on JP5-3: is D2 - we connect to GPO5
 };

@@ -182,7 +182,7 @@ void hal_processPendingIRQs() {
 
 static void hal_spi_init () {
     // SPI.begin();
-     SPI.begin(13, 34, 14, 33);
+     SPI.begin(18, 19, 23, 05);
 }
 
 static void hal_spi_trx(u1_t cmd, u1_t* buf, size_t len, bit_t is_read) {

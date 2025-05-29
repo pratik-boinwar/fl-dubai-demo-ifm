@@ -1,18 +1,18 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
-#define APP_NAME "FL-COCA-COLA-FLOW-METER"
-#define DEVICE_MODEL "COCA-COLA-FLOW-METER"
+#define APP_NAME "FL-dubai-demo-ifm"
+#define DEVICE_MODEL "FL-dubai-demo-ifm"
 
 #define FW_BUILD __DATE__ " " __TIME__
-#define HARDWARE "MODGATE-0003"
+#define HARDWARE "MODGATE-0007"
 
 #define HW_ID "210701"
 #define HW_VER "1.0"
-#define FW_VER "1.01"
+#define FW_VER "1.0"
 #define FW_VERSION "001"
-#define FW_REVISION "01"
-#define FW_DATE "18072024" //before FW_DATE "06032024"
+#define FW_REVISION "00"
+#define FW_DATE "28052025" //before FW_DATE "06032024"
 
 // Pinout
 #define SOFT_SERIAL_RX_PIN 35
@@ -20,7 +20,7 @@
 #define RS485_RX_PIN 16
 #define RS485_TX_PIN 17
 #define RE_DE_PIN 2
-#define HEARTBEAT_LED 5 /// GPIO12
+#define HEARTBEAT_LED 0 /// GPIO12
 #define SDA_PIN 15      /// SDA_pin
 #define SCL_PIN 4       /// SCL_pin
 #define BUZZER_PIN 12
