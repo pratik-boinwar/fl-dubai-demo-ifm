@@ -25,7 +25,6 @@
 #include "user.h"
 // extern SoftwareSerial softSerial;
 
-
 enum _AutoApn
 {
     SIM_MANUAL_APN_MODE = 0,
@@ -159,7 +158,6 @@ tParamEntry GetParamTable[] = {
     {"PENDPUB", GetAppPendingPubCnt},
     {"LORAMODE", GetDataSendMode},
 
-
     {0, 0}};
 
 tParamEntry SetParamTable[] = {
@@ -273,8 +271,6 @@ tParamEntry SetParamTable[] = {
     {"PREVDAY", SetPrevDay},
     {"PREVTOTALIZER", SetPrevDayTotalizer},
     {"LORAMODE", SetDataSendMode},
-
-
 
     {0, 0}};
 
@@ -7100,7 +7096,6 @@ CMD_STATUS SetFarm5Name(int argSize, char *argv[], CIRCULAR_BUFFER *respBuf)
     return CMDLINE_SUCCESS;
 }
 
-
 CMD_STATUS GetPrevDay(int argSize, char *argv[], CIRCULAR_BUFFER *respBuf)
 {
     char prevday[5]; // mdeomRstCnt size is uint32_t
@@ -7230,56 +7225,57 @@ CMD_STATUS SetPrevDayTotalizer(int argSize, char *argv[], CIRCULAR_BUFFER *respB
     return CMDLINE_SUCCESS;
 }
 
-CMD_STATUS SetDataSendMode(int argSize, char *argv[], CIRCULAR_BUFFER *respBuf)
-{
-    // Check if no. of arguments is as desired.
-    if (3 != argSize)
-    {
-        CbPushS(respBuf, BAD_ARG_RESP);
-        return CMDLINE_BAD_ARGS;
-    }
+// CMD_STATUS SetDataSendMode(int argSize, char *argv[], CIRCULAR_BUFFER *respBuf)
+// {
 
-    // Check If its a valid String.
-    if (NULL == argv[2])
-    {
-        CbPushS(respBuf, BAD_ARG_RESP);
-        return CMDLINE_BAD_ARGS;
-    }
+//     // Check if no. of arguments is as desired.
+//     if (3 != argSize)
+//     {
+//         CbPushS(respBuf, BAD_ARG_RESP);
+//         return CMDLINE_BAD_ARGS;
+//     }
 
-    // Check If its a valid String.
-    if (!String(argv[2]).c_str())
-    {
-        CbPushS(respBuf, ERROR_RESP);
-        return CMDLINE_FAIL;
-    }
+//     // Check If its a valid String.
+//     if (NULL == argv[2])
+//     {
+//         CbPushS(respBuf, BAD_ARG_RESP);
+//         return CMDLINE_BAD_ARGS;
+//     }
 
-    if (0 == strcmp("LORA", argv[2]))
-    {
-        debugPrintln("Lora mode enabled");
-        gSysParam.loraOr4gEn = true;
-      //  wifiApDoneFlag = false;
-        if (false == AppSetConfigSysParams(&gSysParam))
-        {
-        }
-    }
-    else if (0 == strcmp("4G", argv[2]))
-    {
-        debugPrintln("4G mode enabled");
-        gSysParam.loraOr4gEn = false;
-       // wifiApDoneFlag = false;
-        if (false == AppSetConfigSysParams(&gSysParam))
-        {
-        }
-    }
-    else
-    {
-        CbPushS(respBuf, BAD_ARG_RESP);
-        return CMDLINE_BAD_ARGS;
-    }
-   // wifiSettingsResetFlag = true;
-    CbPushS(respBuf, OK_RESP);
-    return CMDLINE_SUCCESS;
-}
+//     // Check If its a valid String.
+//     if (!String(argv[2]).c_str())
+//     {
+//         CbPushS(respBuf, ERROR_RESP);
+//         return CMDLINE_FAIL;
+//     }
+
+//     if (0 == strcmp("lora", argv[2]))
+//     {
+//         debugPrintln("Lora mode enabled");
+//         gSysParam.loraOr4gEn = true;
+//         //  wifiApDoneFlag = false;
+//         if (false == AppSetConfigSysParams(&gSysParam))
+//         {
+//         }
+//     }
+//     else if (0 == strcmp("4g", argv[2]))
+//     {
+//         debugPrintln("4G mode enabled");
+//         gSysParam.loraOr4gEn = false;
+//         // wifiApDoneFlag = false;
+//         if (false == AppSetConfigSysParams(&gSysParam))
+//         {
+//         }
+//     }
+//     else
+//     {
+//         CbPushS(respBuf, BAD_ARG_RESP);
+//         return CMDLINE_BAD_ARGS;
+//     }
+//     // wifiSettingsResetFlag = true;
+//     CbPushS(respBuf, OK_RESP);
+//     return CMDLINE_SUCCESS;
+// }
 
 CMD_STATUS GetDataSendMode(int argSize, char *argv[], CIRCULAR_BUFFER *respBuf)
 {
@@ -7299,6 +7295,65 @@ CMD_STATUS GetDataSendMode(int argSize, char *argv[], CIRCULAR_BUFFER *respBuf)
     }
     CbPushS(respBuf, loramode);
     CbPushS(respBuf, "\r\n");
+    CbPushS(respBuf, OK_RESP);
+    return CMDLINE_SUCCESS;
+}
+
+
+
+CMD_STATUS SetDataSendMode(int argSize, char *argv[], CIRCULAR_BUFFER *respBuf)
+{
+    uint8_t arg2;
+    // Check if no. of arguments is as desired.
+    if (3 != argSize)
+    {
+        CbPushS(respBuf, BAD_ARG_RESP);
+        return CMDLINE_BAD_ARGS;
+    }
+
+    // Check If its a valid String.
+    if (NULL == argv[2])
+    {
+        CbPushS(respBuf, BAD_ARG_RESP);
+        return CMDLINE_BAD_ARGS;
+    }
+
+    if (0 == IsNum(argv[2]))
+    {
+        CbPushS(respBuf, BAD_PARAM_RESP);
+        return CMDLINE_BAD_PARAM;
+    }
+
+    arg2 = atoi(argv[2]);
+
+    if (1 == arg2)
+    {
+        debugPrintln("Lora mode enabled");
+        gSysParam.loraOr4gEn = true;
+        //  wifiApDoneFlag = false;
+        if (false == AppSetConfigSysParams(&gSysParam))
+        {
+            CbPushS(respBuf, ERROR_RESP);
+            return CMDLINE_FAIL;
+        }
+    }
+    else if (0 == arg2)
+    {
+        debugPrintln("4G mode enabled");
+        gSysParam.loraOr4gEn = false;
+        // wifiApDoneFlag = false;
+        if (false == AppSetConfigSysParams(&gSysParam))
+        {
+            CbPushS(respBuf, ERROR_RESP);
+            return CMDLINE_FAIL;
+        }
+    }
+    else
+    {
+        CbPushS(respBuf, BAD_ARG_RESP);
+        return CMDLINE_BAD_ARGS;
+    }
+    // wifiSettingsResetFlag = true;
     CbPushS(respBuf, OK_RESP);
     return CMDLINE_SUCCESS;
 }

@@ -586,45 +586,45 @@ void SendSensorDataLoop(void)
                     fl1DailyTotalizerSendFlag = true;
                 }
 
-                if (1 == gSysParam.modbusSlave2Enable)
-                {
-                    if (false == fmFailedFlagStatus.isGetFM2_Data1ValueFailed)
-                    {
-                        _httpTrans.fl2_FlowRate = fmData[1].flowRate;
-                        _httpTrans.fl2_totalizer = fmData[1].totalizer;
-                        fl2DailyTotalizerSendFlag = true;
-                    }
-                    else
-                    {
-                        _httpTrans.fl2_FlowRate = -10000;
-                        _httpTrans.fl2_totalizer = -10000;
-                        fl2DailyTotalizerSendFlag = false;
-                    }
-                    // if (false == fmFailedFlagStatus.isGetFM2_Data2ValueFailed)
-                    // {
-                    //     _httpTrans.fl2_highAlarm = fmData[1].highAlarm;
-                    //     _httpTrans.fl2_lowAlarm = fmData[1].lowAlarm;
-                    // }
-                    // else
-                    // {
-                    //     _httpTrans.fl2_highAlarm = -10000;
-                    //     _httpTrans.fl2_lowAlarm = -10000;
-                    // }
-                }
-                else
-                {
-                    fl2DailyTotalizerSendFlag = true;
-                }
+                // if (1 == gSysParam.modbusSlave2Enable)
+                // {
+                //     if (false == fmFailedFlagStatus.isGetFM2_Data1ValueFailed)
+                //     {
+                //         _httpTrans.fl2_FlowRate = fmData[1].flowRate;
+                //         _httpTrans.fl2_totalizer = fmData[1].totalizer;
+                //         fl2DailyTotalizerSendFlag = true;
+                //     }
+                //     else
+                //     {
+                //         _httpTrans.fl2_FlowRate = -10000;
+                //         _httpTrans.fl2_totalizer = -10000;
+                //         fl2DailyTotalizerSendFlag = false;
+                //     }
+                //     // if (false == fmFailedFlagStatus.isGetFM2_Data2ValueFailed)
+                //     // {
+                //     //     _httpTrans.fl2_highAlarm = fmData[1].highAlarm;
+                //     //     _httpTrans.fl2_lowAlarm = fmData[1].lowAlarm;
+                //     // }
+                //     // else
+                //     // {
+                //     //     _httpTrans.fl2_highAlarm = -10000;
+                //     //     _httpTrans.fl2_lowAlarm = -10000;
+                //     // }
+                // }
+                // else
+                // {
+                //     fl2DailyTotalizerSendFlag = true;
+                // }
 
-                if (true == fl1DailyTotalizerSendFlag && true == fl2DailyTotalizerSendFlag)
+                if (true == fl1DailyTotalizerSendFlag)//&& true == fl2DailyTotalizerSendFlag)
                 {
 
                     if (gSysParam2.prevDay != currday)
                     {
                         _httpTrans.fl1_dalilyFlowRate = _httpTrans.fl1_totalizer - gSysParam2.fl1_prevDayTotalizer;
                         gSysParam2.fl1_prevDayTotalizer = _httpTrans.fl1_totalizer; // update prev totalizer FL1
-                        _httpTrans.fl2_dalilyFlowRate = _httpTrans.fl2_totalizer - gSysParam2.fl2_prevDayTotalizer;
-                        gSysParam2.fl2_prevDayTotalizer = _httpTrans.fl2_totalizer; // update prev totalizer FL2
+                        // _httpTrans.fl2_dalilyFlowRate = _httpTrans.fl2_totalizer - gSysParam2.fl2_prevDayTotalizer;
+                        // gSysParam2.fl2_prevDayTotalizer = _httpTrans.fl2_totalizer; // update prev totalizer FL2
                         gSysParam2.prevDay = currday;    // update prev day
                         if(false == AppSetConfigSysParams2(&gSysParam2))
                         {
@@ -638,7 +638,7 @@ void SendSensorDataLoop(void)
                     else
                     {
                         _httpTrans.fl1_dalilyFlowRate = -10000;
-                        _httpTrans.fl2_dalilyFlowRate = -10000;
+                      //  _httpTrans.fl2_dalilyFlowRate = -10000;
                     }
                 }
 
@@ -714,21 +714,21 @@ void CreateHttpPacketToSend(TRANSACTION *httpTrans, String &LogTobeSend)
             values["1-DailyFlowRate"] = httpTrans->fl1_dalilyFlowRate;
         }
     }
-    if (1 == gSysParam.modbusSlave2Enable)
-    {
-        if (-10000 != httpTrans->fl2_FlowRate)
-        {
-            values["2-FlowRate"] = httpTrans->fl2_FlowRate;
-        }
-        if (-10000 != httpTrans->fl2_totalizer)
-        {
-            values["2-Totalizer"] = httpTrans->fl2_totalizer;
-        }
-        if (-10000 != httpTrans->fl2_dalilyFlowRate)
-        {
-            values["2-DailyFlowRate"] = httpTrans->fl2_dalilyFlowRate;
-        }
-    }
+    // if (1 == gSysParam.modbusSlave2Enable)
+    // {
+    //     if (-10000 != httpTrans->fl2_FlowRate)
+    //     {
+    //         values["2-FlowRate"] = httpTrans->fl2_FlowRate;
+    //     }
+    //     if (-10000 != httpTrans->fl2_totalizer)
+    //     {
+    //         values["2-Totalizer"] = httpTrans->fl2_totalizer;
+    //     }
+    //     if (-10000 != httpTrans->fl2_dalilyFlowRate)
+    //     {
+    //         values["2-DailyFlowRate"] = httpTrans->fl2_dalilyFlowRate;
+    //     }
+    // }
 
     serializeJson(httpDoc, LogTobeSend);
 

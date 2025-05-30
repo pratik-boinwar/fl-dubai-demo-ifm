@@ -490,6 +490,8 @@ void WebServerHandler()
                     doc["dns"] = gSysParam.dns;
                     doc["autoApn"] = gSysParam.apnMode;
                     doc["sim1APN"] = gSysParam.apn1;
+                    
+                    doc["lora"]=gSysParam.loraOr4gEn;
 
                     serializeJsonPretty(doc, outstream);
 
@@ -670,6 +672,15 @@ void WebServerHandler()
                         strcpy(gSysParam.apn1, doc["sim1APN"]);
                         debugPrint("[WEBPAGE] Updating sim1APN as: ");
                         debugPrintln(gSysParam.apn1);
+                    }
+                }
+                if (doc.containsKey("lora"))
+                {
+                    if (!doc["lora"].isNull())
+                    {
+                        gSysParam.loraOr4gEn= (int)doc["lora"];
+                        debugPrint("[WEBPAGE] Updating lora as :");
+                        debugPrintln(gSysParam.loraOr4gEn);
                     }
                 }
                 debugPrintln("[WEBPAGE] Connectivity settings Succes!");
